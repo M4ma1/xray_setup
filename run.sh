@@ -22,7 +22,7 @@ xray x25519 > x25519.txt
 echo "Key pair saved to x25519.txt"
 
 # Extract public key for later use
-grep -o 'Public key: .*' x25519.txt | cut -d' ' -f3 > pubkey.txt
+grep -o 'PublicKey.: .*' x25519.txt | cut -d' ' -f2 > pubkey.txt
 echo "Public key extracted to pubkey.txt"
 
 # Check for HTTP/2 support
@@ -53,7 +53,7 @@ echo "Using domain: $CLOUDFLARE_DOMAIN"
 
 # Read generated values
 UUID=$(cat uuid.txt | tr -d '[:space:]')
-PRIVATE_KEY=$(grep -o 'Private key: .*' x25519.txt | cut -d' ' -f3)
+PRIVATE_KEY=$(grep -o 'PrivateKey: .*' x25519.txt | cut -d' ' -f2)
 PUBLIC_KEY=$(cat pubkey.txt | tr -d '[:space:]')
 
 # Create config.json
