@@ -146,6 +146,7 @@ EOF
 
 # Make add_new.sh executable
 chmod +x add_new.sh
+./add_new.sh main
 
 # Restart Xray service
 echo "Restarting Xray service..."
