@@ -146,6 +146,9 @@ EOF
 
 # Make add_new.sh executable
 chmod +x add_new.sh
+
+# Generate first link
+echo -e "\nGenerating first link with tag 'main':"
 ./add_new.sh main
 
 # Restart Xray service
@@ -158,10 +161,6 @@ systemctl enable xray
 # Show current status
 echo "Xray service status:"
 systemctl status xray --no-pager -l
-
-# Generate first link
-echo -e "\nGenerating first link with tag 'main':"
-./add_new.sh main
 
 echo -e "\nSetup completed!"
 echo "Files created:"
